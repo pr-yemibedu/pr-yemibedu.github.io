@@ -27,7 +27,9 @@ title: Yemi Bedu @ PR
 - Dotnet Core, JVM
 - MS SQL
 - Nagios, Zabbix
-- VMWare { ESX , ESXi }, Proxmox, XCP-NG, Virtuozzo, oVirt, ZSVirt, Harvester, OpenNode, OpenVZ, Podman, QubesOS
+- VMWare { ESX , ESXi },  XCP-NG, QubesOS, oVirt, ZSVirt
+- Proxmox, Harvester, OpenNode, Virtuozzo, OpenVZ
+- Podman, Docker
 - Vcenter, PegaProx, XCP-Center, XO, Dockge, Dockhand
 - ERP ( Infor { Syteline , CSI } )
 - EAI EDI ( WebMethods { IS , TN } , Seeburger BIS )
@@ -36,17 +38,23 @@ title: Yemi Bedu @ PR
 ## Hardware Systems
 
 - Rackmount Server, Desktop Computer, Laptop System
-- Managed Swtich, IP Camera
+- Managed Switch, IP Camera
 
   
 ## Information 
 
 {% for post in site.posts %}
 
-### {{ site.baseurl }}
-### {{ post.url }}
+### [{{ site.baseurl }}]
+{% if post.external_url %}
+### E [{{ post.external_url }}]
+{% else %}
+### I [{{ post.url }}]
+{% endif %}
+
 ### {{ post.title }}
-### {{ post.subtitle }} 
+### {{ post.subtitle }}
+### {{ post.excerpt }}
 ### {{ post.date | date: '%Y-%m-%d' }}
 ### ({{ post.date | date: "%-d %B %Y" }})
 
